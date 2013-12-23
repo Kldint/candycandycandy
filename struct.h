@@ -14,7 +14,7 @@ typedef struct color {
 /* List of colors, to be used for matching, random generation, etc */
 typedef struct colors {
 	color*	colors;
-	int		length;
+	short	length;
 }
 
 /* Types of every chip */
@@ -29,31 +29,25 @@ typedef enum chiptype {
 
 /* Definition of a single chip */
 typedef struct chip {
-	int			flavour;		// Corresponds to a color id
+	short		flavour;		// Corresponds to a color id
 	chiptype	type;	
 } chip;
 
 typedef struct chippos {
-	int 		x;
-	int			y;
+	short 		x;
+	short		y;
 } chippos;
-
-typedef struct chipposlinked {
-	int			x;
-	int			y;
-	struct chipposlinked* next;
-} chipposlinked;
 	
 typedef struct chipgrid {
-	chip** 	chips;
-	int		xdim;
-	int		ydim;
+	chip** 		chips;
+	short		xdim;
+	short		ydim;
 } chipgrid;
 
 typedef struct maskgrid {
-	int**	mask;
-	int		xdim;
-	int		ydim;
+	short**		mask;
+	short		xdim;
+	short		ydim;
 } maskgrid;
 
 /* Types of possible matchings */
@@ -68,9 +62,9 @@ typedef enum combitype {
 /*	Definition of a single combination 
 	To be used as a chained list */
 typedef struct combi {
-	int				flavour;
+	short			flavour;
 	combitype		type;
-	int				length;
+	short			length;
 	chippos*		matched;
 	struct combi*	next;
 } combi;
