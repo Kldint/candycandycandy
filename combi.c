@@ -1,3 +1,5 @@
+#include "combi.h"
+
 void appendCombiList(combi** list, combi* element) {
 	combi* cursor;
 	if(!list) { 

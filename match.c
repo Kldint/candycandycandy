@@ -1,3 +1,5 @@
+#include "match.h"
+
 // Check if a neighbouring chip is part of a combination
 int seekMatchStep(chipgrid *grid, chippos *current, direction dir, int *flavour) {
 	// Represents target chip position 
